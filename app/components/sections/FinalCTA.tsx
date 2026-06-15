@@ -1,0 +1,42 @@
+import Container from "../ui/Container";
+import Button from "../ui/Button";
+import Reveal from "../ui/Reveal";
+
+export default function FinalCTA() {
+  return (
+    <section className="bg-white pb-16 sm:pb-24">
+      <Container>
+        <div className="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-brand to-brand-dark px-6 py-14 text-center text-white sm:px-12 sm:py-20">
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute -left-16 -top-16 h-64 w-64 rounded-full bg-white/10 blur-2xl"
+          />
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute -bottom-20 -right-10 h-72 w-72 rounded-full bg-navy/20 blur-3xl"
+          />
+          <Reveal className="relative" direction="up">
+            <p className="text-5xl" aria-hidden="true">
+              🍔
+            </p>
+            <h2 className="mt-4 font-display text-3xl font-extrabold leading-[1.05] sm:text-5xl">
+              Hungry? Fast. Fresh. Delivered.
+            </h2>
+            <p className="mx-auto mt-4 max-w-xl text-lg text-white/90">
+              Order your next meal in minutes or join thousands of partners and
+              riders growing with QuickBite.
+            </p>
+            <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
+              <Button href="/restaurants" variant="white" size="lg">
+                Order now
+              </Button>
+              <Button href="#app" variant="dark" size="lg">
+                Get the app
+              </Button>
+            </div>
+          </Reveal>
+        </div>
+      </Container>
+    </section>
+  );
+}
