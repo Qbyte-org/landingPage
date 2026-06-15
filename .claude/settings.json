@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e \"const fs=require\\('fs'\\); const p='node_modules/eslint-config-next/'; const files=require\\('fs'\\).readdirSync\\(p\\); console.log\\(files\\);\")"
+    ]
+  }
+}
