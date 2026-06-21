@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
+import { Zap, Handshake, MapPinned } from "lucide-react";
 import SiteShell from "../components/layout/SiteShell";
 import PageHeader from "../components/sections/PageHeader";
 import TrustBar from "../components/sections/TrustBar";
 import Container from "../components/ui/Container";
 import SectionHeading from "../components/ui/SectionHeading";
+import IconChip from "../components/ui/IconChip";
 import Button from "../components/ui/Button";
 
 export const metadata: Metadata = {
@@ -14,17 +16,17 @@ export const metadata: Metadata = {
 
 const values = [
   {
-    emoji: "⚡",
+    icon: Zap,
     title: "Speed",
     body: "We obsess over delivery times so your food arrives fresh and fast.",
   },
   {
-    emoji: "🤝",
+    icon: Handshake,
     title: "Trust",
     body: "Verified vendors, secure payments and transparent tracking, every order.",
   },
   {
-    emoji: "🇳🇬",
+    icon: MapPinned,
     title: "Built for Nigeria",
     body: "From multi-restaurant orders to non-app riders, we design for real life here.",
   },
@@ -36,7 +38,7 @@ export default function CompanyPage() {
       <PageHeader
         eyebrow="Our story"
         title="Feeding Nigeria, one fast delivery at a time"
-        subtitle="QuickBite connects customers with local food sellers while powering a mixed fleet of riders — built for speed, trust and the realities of the Nigerian market."
+        subtitle="Starting in Ile-Ife, QuickBite connects customers with local food sellers while powering a mixed fleet of riders — built for speed, trust and the realities of the Nigerian market."
       >
         <Button href="/restaurants" size="lg">
           Order now
@@ -58,11 +60,9 @@ export default function CompanyPage() {
             {values.map((v) => (
               <div
                 key={v.title}
-                className="rounded-card border border-border bg-cream p-8 text-center"
+                className="rounded-2xl border border-border bg-cream p-8 text-center shadow-soft transition-transform duration-200 hover:-translate-y-1"
               >
-                <span className="text-4xl" aria-hidden="true">
-                  {v.emoji}
-                </span>
+                <IconChip icon={v.icon} size="lg" tone="brand" className="mx-auto" />
                 <h3 className="mt-4 text-xl font-bold text-navy">{v.title}</h3>
                 <p className="mt-2 text-base leading-relaxed text-muted">
                   {v.body}

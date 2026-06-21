@@ -31,11 +31,14 @@
 
   /* Radius (12-16px brand) */
   --radius-card: 0.875rem;
+  --radius-xl2: 1.25rem;
   --radius-pill: 9999px;
 
-  /* Shadow */
-  --shadow-card: 0 6px 24px -8px rgb(26 26 46 / 0.12);
-  --shadow-card-hover: 0 16px 40px -12px rgb(26 26 46 / 0.22);
+  /* Shadow — layered for depth */
+  --shadow-soft: 0 1px 2px rgb(26 26 46 / 0.04), 0 4px 12px -6px rgb(26 26 46 / 0.08);
+  --shadow-card: 0 2px 6px -2px rgb(26 26 46 / 0.06), 0 10px 30px -12px rgb(26 26 46 / 0.16);
+  --shadow-card-hover: 0 8px 18px -6px rgb(26 26 46 / 0.12), 0 24px 50px -16px rgb(255 107 0 / 0.22);
+  --shadow-ring: 0 0 0 1px rgb(26 26 46 / 0.04);
 }
 
 body {
@@ -52,7 +55,26 @@ html {
 /* Display font helper for headings */
 .font-display {
   font-family: var(--font-display), var(--font-sans), system-ui, sans-serif;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
+/* Brand-tinted text selection */
+::selection {
+  background: color-mix(in srgb, var(--color-brand) 22%, transparent);
+  color: var(--color-navy);
+}
+
+/* Hairline divider that fades at the edges — used to separate sections */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--color-border) 18%,
+    var(--color-border) 82%,
+    transparent
+  );
 }
 
 /* ---- Keyframes (GPU-friendly: transform/opacity only) ---- */

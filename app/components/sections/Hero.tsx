@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion, type Variants } from "motion/react";
+import { Bike, MapPin, Star, ArrowRight } from "lucide-react";
 import Container from "../ui/Container";
 import Button from "../ui/Button";
 import AvatarStack from "../ui/AvatarStack";
@@ -50,9 +51,14 @@ export default function Hero() {
         >
           <motion.span
             variants={item}
-            className="inline-flex items-center gap-2 rounded-pill bg-white px-4 py-1.5 text-sm font-semibold text-brand-dark shadow-sm"
+            className="inline-flex items-center gap-2 rounded-pill bg-white px-4 py-1.5 text-sm font-semibold text-brand-dark shadow-soft ring-1 ring-border"
           >
-            🛵 Now delivering across Nigeria
+            <span className="relative flex h-2 w-2" aria-hidden="true">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-pill bg-success opacity-75" />
+              <span className="relative inline-flex h-2 w-2 rounded-pill bg-success" />
+            </span>
+            Live in Ile-Ife
+            <span className="text-muted">· Nigeria next</span>
           </motion.span>
 
           <motion.h1
@@ -70,7 +76,7 @@ export default function Hero() {
             className="mt-5 text-lg leading-relaxed text-muted sm:text-xl"
           >
             Jollof, grills, swallow and everything in between — from your
-            favourite spots across Nigeria, at your door in minutes.
+            favourite spots across Ile-Ife, at your door in minutes.
           </motion.p>
 
           {/* Address pill (decorative — links to restaurants) */}
@@ -80,15 +86,7 @@ export default function Hero() {
             className="mt-8 flex flex-col gap-3 rounded-card bg-white p-2 shadow-card sm:flex-row sm:items-center"
           >
             <label className="flex flex-1 items-center gap-3 px-3">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path
-                  d="M12 21s7-5.7 7-11a7 7 0 1 0-14 0c0 5.3 7 11 7 11Z"
-                  stroke="#ff6b00"
-                  strokeWidth="2"
-                  strokeLinejoin="round"
-                />
-                <circle cx="12" cy="10" r="2.5" stroke="#ff6b00" strokeWidth="2" />
-              </svg>
+              <MapPin className="h-[1.4rem] w-[1.4rem] shrink-0 text-brand" strokeWidth={2} aria-hidden="true" />
               <input
                 type="text"
                 name="address"
@@ -109,8 +107,9 @@ export default function Hero() {
           >
             <AvatarStack />
             <div className="text-sm">
-              <p className="font-bold text-navy">
-                <span className="text-brand-dark">★ 4.8</span> · Loved by 500k+
+              <p className="flex items-center gap-1.5 font-bold text-navy">
+                <Star className="h-4 w-4 fill-brand text-brand" aria-hidden="true" />
+                <span className="text-brand-dark">4.8</span> · Loved by 500k+
                 foodies
               </p>
               <p className="text-muted">
@@ -125,9 +124,7 @@ export default function Hero() {
               className="group inline-flex items-center gap-1 text-base font-semibold text-brand-dark underline-offset-4 hover:underline"
             >
               Own a restaurant? Become a partner
-              <span className="transition-transform group-hover:translate-x-1">
-                →
-              </span>
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
             </Link>
           </motion.div>
         </motion.div>
@@ -155,10 +152,10 @@ export default function Hero() {
             initial={reduce ? false : { opacity: 0, y: 16 }}
             animate={reduce ? undefined : { opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.5 }}
-            className="absolute -left-3 bottom-6 flex items-center gap-3 rounded-card bg-white p-3 pr-5 shadow-card sm:-left-6"
+            className="absolute -left-3 bottom-6 flex items-center gap-3 rounded-2xl bg-white p-3 pr-5 shadow-card ring-1 ring-border sm:-left-6"
           >
-            <div className="flex h-11 w-11 items-center justify-center rounded-pill bg-brand-50 text-xl">
-              ⭐
+            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-50">
+              <Star className="h-5 w-5 fill-brand text-brand" aria-hidden="true" />
             </div>
             <div>
               <p className="text-lg font-extrabold leading-none text-navy">4.8</p>
@@ -171,10 +168,10 @@ export default function Hero() {
             initial={reduce ? false : { opacity: 0, y: 16 }}
             animate={reduce ? undefined : { opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.65 }}
-            className="absolute -right-2 top-6 flex items-center gap-3 rounded-card bg-navy p-3 pr-5 text-white shadow-card sm:-right-5"
+            className="absolute -right-2 top-6 flex items-center gap-3 rounded-2xl bg-navy p-3 pr-5 text-white shadow-card sm:-right-5"
           >
-            <div className="flex h-11 w-11 items-center justify-center rounded-pill bg-brand text-xl animate-float">
-              🛵
+            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand animate-float">
+              <Bike className="h-5 w-5 text-white" strokeWidth={2} aria-hidden="true" />
             </div>
             <div>
               <p className="text-sm font-bold leading-none">Arriving in</p>

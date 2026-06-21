@@ -1,10 +1,21 @@
 // Maps URL slugs to the markdown files in /legal and their display metadata.
+import type { LucideIcon } from "lucide-react";
+import { FileText, Lock, Cookie, ReceiptText } from "lucide-react";
+
+type LegalDoc = {
+  file: string;
+  title: string;
+  short: string;
+  icon: LucideIcon;
+  description: string;
+};
+
 export const legalDocs = {
   terms: {
     file: "terms-and-conditions.md",
     title: "Terms & Conditions",
     short: "Terms",
-    icon: "📄",
+    icon: FileText,
     description:
       "The terms that govern your use of QuickBite as a customer, vendor or rider.",
   },
@@ -12,7 +23,7 @@ export const legalDocs = {
     file: "privacy-policy.md",
     title: "Privacy Policy",
     short: "Privacy",
-    icon: "🔒",
+    icon: Lock,
     description:
       "How QuickBite collects, uses and protects your personal data under the NDPR and NDPA.",
   },
@@ -20,7 +31,7 @@ export const legalDocs = {
     file: "cookie-policy.md",
     title: "Cookie Policy",
     short: "Cookies",
-    icon: "🍪",
+    icon: Cookie,
     description:
       "How QuickBite uses cookies and similar technologies, and how to manage them.",
   },
@@ -28,11 +39,11 @@ export const legalDocs = {
     file: "refund-policy.md",
     title: "Refund & Cancellation Policy",
     short: "Refunds",
-    icon: "💸",
+    icon: ReceiptText,
     description:
       "When and how cancellations and refunds are handled on QuickBite.",
   },
-} as const;
+} satisfies Record<string, LegalDoc>;
 
 export type LegalSlug = keyof typeof legalDocs;
 

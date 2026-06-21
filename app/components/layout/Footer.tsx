@@ -67,7 +67,8 @@ export default function Footer() {
             <Logo variant="light" />
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/60">
               Fast. Fresh. Delivered. QuickBite connects you with the best food
-              from restaurants and home kitchens across Nigeria.
+              from restaurants and home kitchens across Ile-Ife — and soon, all
+              of Nigeria.
             </p>
             <div className="mt-6 flex items-center gap-3">
               {socials.map((s) => (
@@ -109,8 +110,8 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 text-sm text-white/50 sm:flex-row">
-          <p>© 2026 QuickBite. Lagos, Nigeria. All rights reserved.</p>
-          <p>Built for Nigeria 🇳🇬 — payments powered by Paystack.</p>
+          <p>© 2026 QuickBite. Ile-Ife, Osun State, Nigeria. All rights reserved.</p>
+          <p>Built in Ile-Ife for Nigeria — payments powered by Paystack.</p>
         </div>
       </Container>
     </footer>

@@ -1,3 +1,4 @@
+import { Check } from "lucide-react";
 import Container from "../ui/Container";
 import SectionHeading from "../ui/SectionHeading";
 import Button from "../ui/Button";
@@ -23,10 +24,10 @@ export default function ForRiders() {
             >
               <div className="flex items-center gap-4">
                 <span
-                  className="flex h-14 w-14 items-center justify-center rounded-pill bg-white text-2xl shadow-sm"
+                  className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-white text-brand-dark shadow-sm ring-1 ring-border"
                   aria-hidden="true"
                 >
-                  {tier.emoji}
+                  <tier.icon className="h-7 w-7" strokeWidth={1.75} />
                 </span>
                 <div>
                   <h3 className="text-xl font-bold text-navy">{tier.name}</h3>
@@ -38,10 +39,10 @@ export default function ForRiders() {
                 {tier.points.map((point) => (
                   <li key={point} className="flex items-start gap-3 text-base text-navy/80">
                     <span
-                      className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-pill bg-success text-xs text-white"
+                      className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-pill bg-success text-white"
                       aria-hidden="true"
                     >
-                      ✓
+                      <Check className="h-3.5 w-3.5" strokeWidth={3} />
                     </span>
                     {point}
                   </li>

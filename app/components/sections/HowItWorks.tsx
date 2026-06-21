@@ -23,11 +23,11 @@ export default function HowItWorks() {
             <Reveal
               key={step.title}
               delay={i * 0.12}
-              className="relative flex flex-col items-center rounded-card bg-white p-8 text-center shadow-card transition-transform duration-200 hover:-translate-y-1"
+              className="relative flex flex-col items-center rounded-2xl border border-border bg-white p-8 text-center shadow-card transition-transform duration-200 hover:-translate-y-1"
             >
-              <div className="relative flex h-20 w-20 items-center justify-center rounded-pill bg-gradient-to-br from-brand to-brand-light text-3xl shadow-md">
-                <span aria-hidden="true">{step.emoji}</span>
-                <span className="absolute -right-1 -top-1 flex h-7 w-7 items-center justify-center rounded-pill bg-navy text-sm font-bold text-white">
+              <div className="relative flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-to-br from-brand to-brand-light text-white shadow-[0_10px_24px_-8px_rgb(255_107_0/0.5)]">
+                <step.icon className="h-8 w-8" strokeWidth={1.75} aria-hidden="true" />
+                <span className="absolute -right-2 -top-2 flex h-7 w-7 items-center justify-center rounded-pill bg-navy text-sm font-bold text-white ring-4 ring-cream">
                   {i + 1}
                 </span>
               </div>

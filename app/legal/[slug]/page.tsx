@@ -5,6 +5,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import { ShieldCheck, Clock3 } from "lucide-react";
 import SiteShell from "../../components/layout/SiteShell";
 import PageHeader from "../../components/sections/PageHeader";
 import LegalSidebar from "../../components/sections/LegalSidebar";
@@ -63,10 +64,12 @@ export default async function LegalPage({ params }: Params) {
     <SiteShell>
       <PageHeader eyebrow="Legal" title={doc.title} subtitle={doc.description}>
         <span className="inline-flex items-center gap-2 rounded-pill bg-white px-4 py-1.5 text-sm font-semibold text-navy shadow-sm">
-          🇳🇬 Nigeria · NDPR & NDPA
+          <ShieldCheck className="h-4 w-4 text-brand-dark" strokeWidth={2} aria-hidden="true" />
+          Nigeria · NDPR &amp; NDPA
         </span>
         <span className="inline-flex items-center gap-2 rounded-pill bg-white px-4 py-1.5 text-sm font-semibold text-navy shadow-sm">
-          🕒 Last updated: [DATE]
+          <Clock3 className="h-4 w-4 text-brand-dark" strokeWidth={2} aria-hidden="true" />
+          Last updated: June 2026
         </span>
       </PageHeader>
 
@@ -97,10 +100,10 @@ export default async function LegalPage({ params }: Params) {
                         className="group flex items-center gap-3 rounded-card border border-border bg-white p-4 transition-all duration-200 hover:-translate-y-0.5 hover:border-brand hover:shadow-card"
                       >
                         <span
-                          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-pill bg-cream text-xl"
+                          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-cream text-brand-dark"
                           aria-hidden="true"
                         >
-                          {r.icon}
+                          <r.icon className="h-5 w-5" strokeWidth={1.75} />
                         </span>
                         <span className="text-sm font-bold text-navy group-hover:text-brand-dark">
                           {r.short}

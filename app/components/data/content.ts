@@ -1,6 +1,30 @@
 // Central content source for the QuickBite landing page.
 // Keeping copy + data here means sections stay presentational and easy to tweak.
 
+import type { LucideIcon } from "lucide-react";
+import {
+  CookingPot,
+  Beef,
+  UtensilsCrossed,
+  Cookie,
+  CupSoda,
+  Pizza,
+  Soup,
+  Croissant,
+  CreditCard,
+  MapPin,
+  Navigation,
+  ShoppingBasket,
+  House,
+  Wallet,
+  TrendingUp,
+  Banknote,
+  BadgeCheck,
+  LayoutDashboard,
+  Smartphone,
+  Compass,
+} from "lucide-react";
+
 export type NavLink = { label: string; href: string };
 
 export const navLinks: NavLink[] = [
@@ -19,39 +43,39 @@ export const stats: Stat[] = [
   { value: "12", label: "Cities and counting" },
 ];
 
-export type Category = { name: string; emoji: string; tint: string };
+export type Category = { name: string; icon: LucideIcon; tint: string };
 
 export const categories: Category[] = [
-  { name: "Jollof Rice", emoji: "🍚", tint: "#fff0e4" },
-  { name: "Grills", emoji: "🍖", tint: "#ffe8e0" },
-  { name: "Swallow", emoji: "🍲", tint: "#fff3e0" },
-  { name: "Snacks", emoji: "🥟", tint: "#fff7e6" },
-  { name: "Drinks", emoji: "🥤", tint: "#e8f5ff" },
-  { name: "Pizza", emoji: "🍕", tint: "#fff0e4" },
-  { name: "Local Soups", emoji: "🥘", tint: "#ffeede" },
-  { name: "Pastries", emoji: "🧁", tint: "#fdeaf3" },
+  { name: "Jollof Rice", icon: CookingPot, tint: "#fff0e4" },
+  { name: "Grills", icon: Beef, tint: "#ffe8e0" },
+  { name: "Swallow", icon: UtensilsCrossed, tint: "#fff3e0" },
+  { name: "Snacks", icon: Cookie, tint: "#fff7e6" },
+  { name: "Drinks", icon: CupSoda, tint: "#e8f5ff" },
+  { name: "Pizza", icon: Pizza, tint: "#fff0e4" },
+  { name: "Local Soups", icon: Soup, tint: "#ffeede" },
+  { name: "Pastries", icon: Croissant, tint: "#fdeaf3" },
 ];
 
-export type Step = { title: string; description: string; emoji: string };
+export type Step = { title: string; description: string; icon: LucideIcon };
 
 export const steps: Step[] = [
   {
     title: "Pick your meal",
     description:
       "Browse verified restaurants near you and add dishes from one or many spots to a single cart.",
-    emoji: "🛒",
+    icon: UtensilsCrossed,
   },
   {
     title: "Pay with Paystack",
     description:
       "Checkout securely with your card, bank transfer, USSD or QuickBite wallet — in seconds.",
-    emoji: "💳",
+    icon: CreditCard,
   },
   {
     title: "Track to your door",
     description:
       "Follow every order live, from kitchen to your doorstep, with real-time rider updates.",
-    emoji: "🛵",
+    icon: MapPin,
   },
 ];
 
@@ -102,7 +126,7 @@ export const restaurants: Restaurant[] = [
     image: img("photo-1601050690597-df0568f70950"),
   },
   {
-    name: "Lagos Pizza Co.",
+    name: "Ife Pizza Co.",
     cuisine: "Pizza • Fast Food",
     rating: 4.5,
     deliveryFrom: "₦700",
@@ -119,28 +143,28 @@ export const restaurants: Restaurant[] = [
   },
 ];
 
-export type Feature = { title: string; description: string; emoji: string };
+export type Feature = { title: string; description: string; icon: LucideIcon };
 
 export const appFeatures: Feature[] = [
   {
     title: "Live order tracking",
     description: "Watch your rider move toward you in real time.",
-    emoji: "📍",
+    icon: Navigation,
   },
   {
     title: "Multi-restaurant cart",
     description: "Order from several spots at once — we split and deliver each.",
-    emoji: "🧺",
+    icon: ShoppingBasket,
   },
   {
     title: "Saved addresses",
-    description: "Home, office, or anywhere — reorder in two taps.",
-    emoji: "🏠",
+    description: "Home, hostel, or anywhere — reorder in two taps.",
+    icon: House,
   },
   {
     title: "Paystack wallet",
     description: "Top up once and check out faster every time.",
-    emoji: "⚡",
+    icon: Wallet,
   },
 ];
 
@@ -148,26 +172,26 @@ export const partnerPerks: Feature[] = [
   {
     title: "Reach more customers",
     description:
-      "Get discovered by hungry customers across your city from day one.",
-    emoji: "📈",
+      "Get discovered by hungry customers across Ile-Ife from day one.",
+    icon: TrendingUp,
   },
   {
     title: "Fast Paystack payouts",
     description:
       "Settle earnings reliably with scheduled payouts straight to your bank.",
-    emoji: "💸",
+    icon: Banknote,
   },
   {
     title: "Simple KYC onboarding",
     description:
       "Verify with your NIN and BVN and start selling once approved.",
-    emoji: "✅",
+    icon: BadgeCheck,
   },
   {
     title: "A dashboard that works",
     description:
       "Manage your menu, stock and incoming sub-orders from one place.",
-    emoji: "📊",
+    icon: LayoutDashboard,
   },
 ];
 
@@ -175,7 +199,7 @@ export type RiderTier = {
   name: string;
   tagline: string;
   points: string[];
-  emoji: string;
+  icon: LucideIcon;
 };
 
 export const riderTiers: RiderTier[] = [
@@ -187,7 +211,7 @@ export const riderTiers: RiderTier[] = [
       "Update order status from pickup to drop-off",
       "Track your daily and weekly earnings",
     ],
-    emoji: "📱",
+    icon: Smartphone,
   },
   {
     name: "Dispatch Partners",
@@ -197,21 +221,36 @@ export const riderTiers: RiderTier[] = [
       "Assign orders and update status on riders' behalf",
       "Coordinate via SMS so every delivery stays on track",
     ],
-    emoji: "🧭",
+    icon: Compass,
   },
 ];
 
-export const cities: string[] = [
+// QuickBite is live in Ile-Ife today, with national expansion next.
+export const liveCity = "Ile-Ife";
+export const liveCityState = "Osun State";
+
+// Neighbourhoods and landmarks currently served within Ile-Ife.
+export const coverageAreas: string[] = [
+  "OAU Campus",
+  "Lagere",
+  "Mayfair",
+  "Mokuro",
+  "Sabo",
+  "Ilare",
+  "Modakeke",
+  "Damico",
+  "Parakin",
+  "Iremo",
+];
+
+// Cities on the expansion roadmap (shown as "coming soon").
+export const expansionCities: string[] = [
+  "Ibadan",
   "Lagos",
   "Abuja",
-  "Port Harcourt",
-  "Ibadan",
-  "Benin City",
-  "Enugu",
-  "Kano",
-  "Uyo",
+  "Akure",
+  "Osogbo",
   "Abeokuta",
-  "Owerri",
 ];
 
 export type Testimonial = {
@@ -225,9 +264,9 @@ export type Testimonial = {
 export const testimonials: Testimonial[] = [
   {
     quote:
-      "QuickBite is my go-to for lunch at the office. The jollof gets here hot and the tracking is spot on.",
+      "QuickBite is my go-to for lunch on campus. The jollof gets here hot and the tracking is spot on.",
     name: "Chidinma Okeke",
-    role: "Customer • Lagos",
+    role: "Customer • Ile-Ife",
     initials: "CO",
     accent: "#ff6b00",
   },
@@ -235,15 +274,15 @@ export const testimonials: Testimonial[] = [
     quote:
       "Since joining as a vendor, my orders have doubled. Payouts hit my account like clockwork.",
     name: "Tunde Bakare",
-    role: "Vendor • Suya Republic",
+    role: "Vendor • Ile-Ife",
     initials: "TB",
     accent: "#22c55e",
   },
   {
     quote:
-      "I ride full-time on QuickBite. The app is simple and I always know where my next drop is.",
+      "I ride full-time on QuickBite around Ife. The app is simple and I always know where my next drop is.",
     name: "Emeka Nwosu",
-    role: "Rider • Abuja",
+    role: "Rider • Ile-Ife",
     initials: "EN",
     accent: "#1a1a2e",
   },
@@ -260,7 +299,7 @@ export const faqs: Faq[] = [
   {
     question: "Which areas do you cover?",
     answer:
-      "We currently deliver across Lagos, Abuja, Port Harcourt, Ibadan and more, with new cities going live regularly. Enter your address to see restaurants near you.",
+      "We're live across Ile-Ife — including OAU campus, Lagere, Mayfair, Mokuro and surrounding areas — with more Nigerian cities going live soon. Enter your address to see restaurants near you.",
   },
   {
     question: "How do I pay?",

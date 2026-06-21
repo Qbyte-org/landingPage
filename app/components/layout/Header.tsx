@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
+import { Menu, X } from "lucide-react";
 import Container from "../ui/Container";
 import Logo from "../ui/Logo";
 import Button from "../ui/Button";
@@ -71,29 +72,11 @@ export default function Header() {
           aria-label={open ? "Close menu" : "Open menu"}
           className="inline-flex h-11 w-11 items-center justify-center rounded-pill text-navy hover:bg-black/5 lg:hidden"
         >
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            aria-hidden="true"
-          >
-            {open ? (
-              <path
-                d="M6 6l12 12M18 6L6 18"
-                stroke="currentColor"
-                strokeWidth="2.2"
-                strokeLinecap="round"
-              />
-            ) : (
-              <path
-                d="M4 7h16M4 12h16M4 17h16"
-                stroke="currentColor"
-                strokeWidth="2.2"
-                strokeLinecap="round"
-              />
-            )}
-          </svg>
+          {open ? (
+            <X className="h-6 w-6" strokeWidth={2.2} aria-hidden="true" />
+          ) : (
+            <Menu className="h-6 w-6" strokeWidth={2.2} aria-hidden="true" />
+          )}
         </button>
       </Container>
 

@@ -27,12 +27,12 @@ export default function LegalSidebar({ current }: { current: LegalSlug }) {
                   }`}
                 >
                   <span
-                    className={`flex h-8 w-8 items-center justify-center rounded-pill text-base ${
-                      active ? "bg-white" : "bg-cream"
+                    className={`flex h-8 w-8 items-center justify-center rounded-lg ${
+                      active ? "bg-white text-brand-dark" : "bg-cream text-navy/60"
                     }`}
                     aria-hidden="true"
                   >
-                    {doc.icon}
+                    <doc.icon className="h-4 w-4" strokeWidth={1.75} />
                   </span>
                   {doc.short}
                 </Link>
@@ -48,7 +48,7 @@ export default function LegalSidebar({ current }: { current: LegalSlug }) {
           Our team is happy to help clarify anything.
         </p>
         <a
-          href="mailto:[SUPPORT EMAIL]"
+          href="mailto:support@quickbite.ng"
           className="mt-3 inline-flex text-sm font-semibold text-brand-light hover:underline"
         >
           Contact support →

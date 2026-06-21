@@ -10,7 +10,7 @@ import Button from "../components/ui/Button";
 export const metadata: Metadata = {
   title: "Restaurants — QuickBite",
   description:
-    "Browse verified restaurants, home kitchens and vendors delivering across Nigeria on QuickBite.",
+    "Browse verified restaurants, home kitchens and vendors delivering across Ile-Ife on QuickBite — with more Nigerian cities coming soon.",
 };
 
 export default function RestaurantsPage() {
@@ -18,8 +18,8 @@ export default function RestaurantsPage() {
     <SiteShell>
       <PageHeader
         eyebrow="Order food"
-        title="Find restaurants near you"
-        subtitle="Thousands of verified kitchens, one app. Full ordering goes live with the QuickBite app — preview what's cooking below."
+        title="Find restaurants near you in Ile-Ife"
+        subtitle="Verified kitchens across Ile-Ife, one app. Full ordering goes live with the QuickBite app — preview what's cooking below."
       >
         <Button href="#app" size="lg">
           Get the app

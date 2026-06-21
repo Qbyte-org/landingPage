@@ -17,29 +17,31 @@ const sora = Sora({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://quickbite.ng"),
-  title: "QuickBite — Fast. Fresh. Delivered.",
+  title: "QuickBite — Fast. Fresh. Delivered. in Ile-Ife",
   description:
-    "Order jollof, grills, swallow and more from top restaurants across Nigeria. Fast delivery, live tracking, and easy payments with Paystack.",
+    "Order jollof, grills, swallow and more from top restaurants in Ile-Ife, Osun State. Fast delivery, live tracking, and easy payments with Paystack — launching across Nigeria next.",
   keywords: [
+    "food delivery Ile-Ife",
+    "order food Ile-Ife",
+    "OAU food delivery",
     "food delivery Nigeria",
-    "order food Lagos",
     "QuickBite",
     "jollof delivery",
     "restaurant delivery",
   ],
   openGraph: {
-    title: "QuickBite — Fast. Fresh. Delivered.",
+    title: "QuickBite — Fast. Fresh. Delivered. in Ile-Ife",
     description:
-      "Order from your favourite spots across Nigeria, delivered to your door in minutes. Pay easily with Paystack.",
+      "Order from your favourite spots in Ile-Ife, delivered to your door in minutes. Pay easily with Paystack. Nigeria next.",
     type: "website",
     locale: "en_NG",
     siteName: "QuickBite",
   },
   twitter: {
     card: "summary_large_image",
-    title: "QuickBite — Fast. Fresh. Delivered.",
+    title: "QuickBite — Fast. Fresh. Delivered. in Ile-Ife",
     description:
-      "Order from your favourite spots across Nigeria, delivered to your door in minutes.",
+      "Order from your favourite spots in Ile-Ife, delivered to your door in minutes. Nigeria next.",
   },
 };
 

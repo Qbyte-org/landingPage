@@ -2,6 +2,7 @@ import Image from "next/image";
 import Container from "../ui/Container";
 import Button from "../ui/Button";
 import Reveal from "../ui/Reveal";
+import IconChip from "../ui/IconChip";
 import { partnerPerks } from "../data/content";
 
 export default function ForPartners() {
@@ -42,12 +43,7 @@ export default function ForPartners() {
             <div className="mt-8 grid gap-5 sm:grid-cols-2">
               {partnerPerks.map((perk) => (
                 <div key={perk.title} className="flex gap-3">
-                  <span
-                    className="flex h-10 w-10 shrink-0 items-center justify-center rounded-pill bg-brand-50 text-xl"
-                    aria-hidden="true"
-                  >
-                    {perk.emoji}
-                  </span>
+                  <IconChip icon={perk.icon} size="sm" tone="brand" />
                   <div>
                     <h3 className="text-base font-bold text-navy">
                       {perk.title}

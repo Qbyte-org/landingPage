@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import { Clock, Wallet, Route } from "lucide-react";
 import SiteShell from "../components/layout/SiteShell";
 import PageHeader from "../components/sections/PageHeader";
 import ForRiders from "../components/sections/ForRiders";
 import Container from "../components/ui/Container";
+import IconChip from "../components/ui/IconChip";
 import Button from "../components/ui/Button";
 
 export const metadata: Metadata = {
@@ -12,9 +14,9 @@ export const metadata: Metadata = {
 };
 
 const perks = [
-  { emoji: "🕒", title: "Flexible hours", body: "Go online whenever it suits you — full-time or for extra cash." },
-  { emoji: "💰", title: "Reliable payouts", body: "Track earnings daily and get paid weekly, straight to your bank." },
-  { emoji: "🗺️", title: "Smart dispatch", body: "Get matched to nearby orders so you spend less time waiting." },
+  { icon: Clock, title: "Flexible hours", body: "Go online whenever it suits you — full-time or for extra cash." },
+  { icon: Wallet, title: "Reliable payouts", body: "Track earnings daily and get paid weekly, straight to your bank." },
+  { icon: Route, title: "Smart dispatch", body: "Get matched to nearby orders so you spend less time waiting." },
 ];
 
 export default function RidersPage() {
@@ -41,11 +43,9 @@ export default function RidersPage() {
             {perks.map((p) => (
               <div
                 key={p.title}
-                className="rounded-card border border-border bg-white p-7 text-center"
+                className="rounded-2xl border border-border bg-white p-7 text-center shadow-soft transition-transform duration-200 hover:-translate-y-1"
               >
-                <span className="text-3xl" aria-hidden="true">
-                  {p.emoji}
-                </span>
+                <IconChip icon={p.icon} size="lg" tone="brand" className="mx-auto" />
                 <h3 className="mt-4 text-lg font-bold text-navy">{p.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted">
                   {p.body}

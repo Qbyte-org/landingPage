@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Clock, Star } from "lucide-react";
 import Container from "../ui/Container";
 import SectionHeading from "../ui/SectionHeading";
 import Button from "../ui/Button";
@@ -37,15 +38,17 @@ export default function PopularRestaurants() {
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="object-cover transition-transform duration-300 group-hover:scale-105"
                 />
-                <span className="absolute left-3 top-3 inline-flex items-center gap-1 rounded-pill bg-white/95 px-3 py-1 text-xs font-bold text-navy shadow-sm">
-                  ⏱ {r.eta}
+                <span className="absolute left-3 top-3 inline-flex items-center gap-1.5 rounded-pill bg-white/95 px-3 py-1 text-xs font-bold text-navy shadow-sm backdrop-blur">
+                  <Clock className="h-3.5 w-3.5 text-brand-dark" strokeWidth={2.25} aria-hidden="true" />
+                  {r.eta}
                 </span>
               </div>
               <div className="p-5">
                 <div className="flex items-start justify-between gap-3">
                   <h3 className="text-lg font-bold text-navy">{r.name}</h3>
                   <span className="inline-flex items-center gap-1 rounded-pill bg-brand-50 px-2.5 py-1 text-sm font-bold text-brand-dark">
-                    ⭐ {r.rating}
+                    <Star className="h-3.5 w-3.5 fill-brand text-brand" aria-hidden="true" />
+                    {r.rating}
                   </span>
                 </div>
                 <p className="mt-1 text-sm text-muted">{r.cuisine}</p>

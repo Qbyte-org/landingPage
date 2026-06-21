@@ -1,5 +1,7 @@
+import { MapPin, Search, Bike, CookingPot, CupSoda, type LucideIcon } from "lucide-react";
 import Container from "../ui/Container";
 import Reveal from "../ui/Reveal";
+import IconChip from "../ui/IconChip";
 import { appFeatures } from "../data/content";
 
 function StoreBadge({
@@ -47,11 +49,13 @@ function PhoneMockup() {
           {/* app header */}
           <div className="bg-gradient-to-br from-brand to-brand-light px-4 pb-6 pt-8 text-white">
             <p className="text-xs/none opacity-80">Deliver to</p>
-            <p className="mt-1 flex items-center gap-1 text-sm font-bold">
-              📍 12 Allen Avenue, Ikeja
+            <p className="mt-1 flex items-center gap-1.5 text-sm font-bold">
+              <MapPin className="h-4 w-4" strokeWidth={2.25} aria-hidden="true" />
+              OAU Campus, Ile-Ife
             </p>
-            <div className="mt-4 rounded-pill bg-white/95 px-4 py-2 text-sm text-muted">
-              🔍 Search jollof, suya…
+            <div className="mt-4 flex items-center gap-2 rounded-pill bg-white/95 px-4 py-2 text-sm text-muted">
+              <Search className="h-4 w-4" strokeWidth={2.25} aria-hidden="true" />
+              Search jollof, suya…
             </div>
           </div>
           {/* tracking card */}
@@ -73,21 +77,22 @@ function PhoneMockup() {
                   />
                 ))}
               </div>
-              <p className="mt-2 text-[11px] text-muted">
-                🛵 Emeka is 5 min away
+              <p className="mt-2 flex items-center gap-1.5 text-[11px] text-muted">
+                <Bike className="h-3.5 w-3.5 text-brand-dark" strokeWidth={2.25} aria-hidden="true" />
+                Emeka is 5 min away
               </p>
             </div>
 
-            {[
-              { e: "🍚", n: "Smoky Jollof + Chicken", p: "₦3,500" },
-              { e: "🥤", n: "Chapman (50cl)", p: "₦1,200" },
-            ].map((item) => (
+            {([
+              { icon: CookingPot, n: "Smoky Jollof + Chicken", p: "₦3,500" },
+              { icon: CupSoda, n: "Chapman (50cl)", p: "₦1,200" },
+            ] as { icon: LucideIcon; n: string; p: string }[]).map((item) => (
               <div
                 key={item.n}
                 className="flex items-center gap-3 rounded-card bg-white p-3 shadow-sm"
               >
-                <span className="flex h-9 w-9 items-center justify-center rounded-pill bg-cream-200 text-lg">
-                  {item.e}
+                <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-cream-200 text-brand-dark">
+                  <item.icon className="h-[1.15rem] w-[1.15rem]" strokeWidth={1.75} aria-hidden="true" />
                 </span>
                 <span className="flex-1 text-xs font-semibold text-navy">
                   {item.n}
@@ -129,12 +134,7 @@ export default function AppShowcase() {
             <div className="mt-8 grid gap-5 sm:grid-cols-2">
               {appFeatures.map((f) => (
                 <div key={f.title} className="flex gap-3">
-                  <span
-                    className="flex h-10 w-10 shrink-0 items-center justify-center rounded-pill bg-white/10 text-xl"
-                    aria-hidden="true"
-                  >
-                    {f.emoji}
-                  </span>
+                  <IconChip icon={f.icon} size="sm" tone="light" />
                   <div>
                     <h3 className="text-base font-bold">{f.title}</h3>
                     <p className="mt-0.5 text-sm text-white/60">
